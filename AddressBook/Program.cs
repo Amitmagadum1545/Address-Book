@@ -14,8 +14,25 @@ namespace AddressBookSystem
 
             AddressBook addressBook = new AddressBook();
 
-            addressBook.AddContact("Amit", "Magadum", "Rangoli", "Kolhapur", "Maharashtra", 416143, 9916564830, "amitmagadum1008@gmail.com");
-            addressBook.ViewContact();
+            Console.WriteLine("Please choose an option from the below list");
+            Console.WriteLine("\n 1. Add New Contact \n 2. View Contact \n 3. Exit\n");
+            int option = Convert.ToInt32(Console.ReadLine());
+            switch (option)
+            {
+                case 1:
+                    addressBook.AddNewContact();
+                    break;
+                case 2:
+                    addressBook.ViewContact();
+                    break;
+                case 3:
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("Please choose the correct option");
+                    break;
+            }
+
             Console.ReadLine();
         }
     }
